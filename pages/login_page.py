@@ -12,7 +12,6 @@ class LoginPage(BasePage):
         # реализуйте проверку на корректный url адрес
         login_link = self.browser.find_element(*LoginPageLocators.LOGIN_URL)
         login_link.click()
-        # MainPage.go_to_login_page(self)
         assert 'login' in self.browser.current_url, 'login_url must have "login" inside!!'
 
 

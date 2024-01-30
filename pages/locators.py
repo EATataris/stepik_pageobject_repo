@@ -6,7 +6,6 @@ class MainPageLocators():
 
 
 class LoginPageLocators():
-    # LOGIN_URL = (By.CSS_SELECTOR, "[href='http://selenium1py.pythonanywhere.com/ru/accounts/login/']")
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTRATION_FORM = (By.CSS_SELECTOR, "register_form223")
+    REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
