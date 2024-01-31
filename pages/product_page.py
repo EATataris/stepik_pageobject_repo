@@ -7,10 +7,10 @@ class ProductPage(BasePage):
 
     def could_add_to_basket(self):
         self.should_be_basket_button()
-        # self.add_to_basket()
+        self.add_to_basket()
         # self.test_message_disappeared_after_adding_product_to_basket()
-        # self.test_guest_cant_see_success_message()
-        self.test_guest_cant_see_success_message_after_adding_product_to_basket()
+        # self.guest_cant_see_success_message()
+        # self.test_guest_cant_see_success_message_after_adding_product_to_basket()
         # self.solve_quiz_and_get_code()
         self.name_of_product_check()
 
@@ -37,7 +37,7 @@ class ProductPage(BasePage):
         basket_button.click()
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
 
-    def test_guest_cant_see_success_message(self):
+    def guest_cant_see_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
 
     def test_message_disappeared_after_adding_product_to_basket(self):

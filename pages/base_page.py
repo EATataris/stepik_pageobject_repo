@@ -22,6 +22,10 @@ class BasePage():
         alert.accept()
         # return LoginPage(browser=self.browser, url=self.browser.current_url)
 
+    def go_to_basket_page(self):
+        basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_link.click()
+
     def should_be_login_link(self):
         # assert self.is_element_present(By.CSS_SELECTOR, "#login_link"), "Login link is not presented"
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK)
@@ -32,6 +36,10 @@ class BasePage():
         except NoSuchElementException:
             return False
         return True
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
